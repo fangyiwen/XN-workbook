@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/workbook_app/style_questions_list.css' %}">
+
+<h2>Question List</h2>
+{% if quiz_question_list %}
+<div class="container">
+<form action="{{request.get_full_path}}/choose" method="post">
+  {% csrf_token %}
+  {% for question in quiz_question_list %}
+  <div class="form-group">
+    <label for="exampleFormControlInput1">{{question.question_number}}: &nbsp;&nbsp;&nbsp; {{question.question_text}}</label>
+    {% for option in question.option_set.all %}
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="{{question.question_id}}" id="option{{ forloop.counter }}" value="{{option.option_number}}">
+      <label class="form-check-label" for="option{{ forloop.counter }}">{{ option.option_text }}</label>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  <input type="submit" style="color:white;background-color: #4CAF50;" class="btn btn-outline-secondary" value="Submit">
+</form>
+</div>
+{% else %}
+<p>No questions are available.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/workbook_app/style_quizzes_list.css' %}">
+
+
+<h2>Quizzes list</h2>
+
+{% if course_quiz_list %}
+<div class="container">
+  <table class="table table-hover">
+    <tr>
+      <th>Quiz ID</th>
+      <th>QUIZ Name</th>
+    </tr>
+    {% for quiz in course_quiz_list %}
+    <tr>
+      <td style="color:#337ab7">
+        <a href='{{request.get_full_path}}/{{quiz.quiz_id}}/question'>{{quiz.quiz_id}}</a>
+      </td>
+      <td style="color:#337ab7"><a href='{{request.get_full_path}}/{{quiz.quiz_id}}/question'>{{ quiz.quiz_name }}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% else %}
+<p>No quizzes are available.</p>
+
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<!-- <canvas id="canvas"></canvas> -->
+
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<!-- <script src="{% static 'js\workbook_app\script_index.js' %}"></script> -->
+{% endif %}
+{% endblock %}

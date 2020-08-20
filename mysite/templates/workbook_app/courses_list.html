@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/workbook_app/style_courses_list.css' %}">
+
+<h2>Courses List</h2>
+{% if latest_course_list %}
+<div class="container">
+  <table class="table table-hover">
+    <tr>
+      <th align="center">Course No.</th>
+      <th style= align="center">Course Name</th>
+      <th style= align="center">Course Instructor</th>
+    </tr>
+    {% for course in latest_course_list %}
+    <tr>
+      <td style="color:#337ab7">
+        {{course.course_id}}
+      </td>
+      <td style="color:#337ab7"><a href="{% url 'workbook_app:course-quiz-list' course.course_id %}">{{ course.course_name }}</a></td>
+      <td style="color:#337ab7">{{course.course_instructor}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% else %}
+<p>No courses are available.</p>
+{% endif %}
+
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<!-- <canvas id="canvas"></canvas> -->
+
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<!-- <script src="{% static 'js\workbook_app\script_index.js' %}"></script> -->
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/workbook_app/style_index.css' %}">
+    <h1> </h1>
+<div style="position:relative; top:40px;">
+    <p>START TO TAKE A&nbsp;<b>QUIZ</b>&nbsp;HERE!</p>
+</div>
+<table align="center">
+    <tr>
+    <td>
+    <button class="btn btn1" onclick="window.location.href = '{% url 'admin:index' %}'; " >Publishing Quiz</button>
+
+{#        <text>I am an instructor</text>#}
+        </td>
+    <td>
+    <button class="btn btn1" onclick="window.location.href = '{% url 'workbook_app:course-list' %}';" >Taking Quiz</button>
+    </td>
+    </tr>
+    </table>
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<canvas id="canvas"></canvas>
+
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<script src="{% static 'js\workbook_app\script_index.js' %}"></script>
+{% endblock %}
+
+

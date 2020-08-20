@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/workbook_app/style_index.css' %}">
+<p>Your accuracy rate is {{percent_rate}}!</p>
+<div style="position:relative;top:400px;">
+{% if rate >= 0.9 %}
+<p>Excellent! You are so brilliant!</p>
+{% elif rate >= 0.7 %}
+<p>Congratulations! Keep it up!</p>
+{% else %}
+<p> Come on! You can do it better!</p>
+{% endif %}
+<p><a href="{% url 'workbook_app:course-list' %}">Continue!</a></p>
+</div>
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<canvas id="canvas"></canvas>
+
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<script src="{% static 'js\workbook_app\script_index.js' %}"></script>
+{% endblock %}

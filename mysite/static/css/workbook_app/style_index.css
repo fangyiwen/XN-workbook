@@ -1,0 +1,90 @@
+
+h1 {
+
+  min-height: 50vh;
+  width: 100vw;
+  z-index: 1;
+  color: #fff;
+  /* text-transform: uppercase; */
+  font-size: 6vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+
+p {
+  z-index: 1;
+  color: #fff;
+  /* text-transform: uppercase; */
+  font-size: 5vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+
+}
+
+/* Points Mesh Animation with HTML5 Canvas */
+body {
+  background: #28B2A9 no-repeat center;
+    background-image: url("images/questionicon_2.svg");
+    background-position: 50% 35%;
+
+  margin: 0rem;
+  min-height: 100vh;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+#canvas, #text {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+text {
+  min-height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 8vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#text h1 {
+  opacity: 0.9
+}
+
+table, th, td {
+  padding: 40px;
+  color: black;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
+.btn{
+    appearance: none;
+    background: #293041;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    color: #fff;
+    width: 268px;
+    height: 58px;
+    font-size: 18px;
+    padding: 0.65em 1em;
+    border-radius: 4px;
+    box-shadow: inset 0 -4px 0 0 rgba(0,0,0,0.2);
+    margin-right: 1em;
+    cursor: pointer;
+    border:0;
+}
+.btn1:hover {
+  color: #fff;
+  box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.6), 0 0 8px 0 rgba(0, 0, 0, 0.5);
+}

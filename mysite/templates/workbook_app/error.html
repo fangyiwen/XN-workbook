@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/workbook_app/style_index.css' %}">
+<p>You must answer all the questions!</p>
+<div style="position:relative;top:400px;">
+<p>Please turn back to finish the quiz!</p>
+<p><a href="#" onclick="javascript:history.back(-1);">Back to quiz!</a></p>
+</div>
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<canvas id="canvas"></canvas>
+
+<!-- Points Mesh Animation with HTML5 Canvas -->
+<script src="{% static 'js\workbook_app\script_index.js' %}"></script>
+{% endblock %}
+
+
